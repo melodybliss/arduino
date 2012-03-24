@@ -52,11 +52,11 @@ byte MORSETABLE[] = {
 };
 
 
-int farnsworth = 2;            // a multiplier between the pause
-int ditlength = 100;
-int dahlength = ditlength * 3;
-int between = ditlength * 5;
-int pause = (ditlength * 5) * farnsworth;
+const int farnsworth = 2;            // a multiplier between the pause
+const int ditlength = 100;
+const int dahlength = ditlength * 3;
+const int between = ditlength * 5;
+const int pause = (ditlength * 5) * farnsworth;
 
 void dit()
 {
@@ -118,8 +118,6 @@ void send_morse_string(char *s)
   Serial.println("Sending...");
   Serial.print("s is ");
   Serial.println(s);
-  Serial.print("size of s is ");
-  Serial.println(sizeof(s));
   for(int i = 0; s[i] != 0; i++)
   {
     Serial.print(s[i]);
